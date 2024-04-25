@@ -13,11 +13,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Card } from "./ui/card";
+import { useRouter } from "next/navigation";
 const OnboardingForm = () => {
   const form = useForm();
+  const router = useRouter();
 
   const onSubmit = (values) => {
     localStorage.setItem("studioDetails", JSON.stringify(values));
+    router.push("/listen");
   };
 
   return (
